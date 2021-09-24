@@ -21,7 +21,7 @@ class KthLargest{
             size++;
         } else if(heap[0] < val){
             heap[0] = val;
-            down(0);
+            down(0)
         }
         return heap[0];
     }
