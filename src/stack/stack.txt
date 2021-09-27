@@ -1,0 +1,17 @@
+1. Stack 只有入栈和出栈的操作：
+    把元素压栈：push(E)；
+    把栈顶的元素“弹出”：pop()；
+    取栈顶元素但不弹出：peek()。
+
+    在Java中，我们用Deque可以实现Stack的功能：
+    把元素压栈：push(E)/addFirst(E)；
+    把栈顶的元素“弹出”：pop()/removeFirst()；
+    取栈顶元素但不弹出：peek()/peekFirst()。
+
+    当我们把Deque作为Stack使用时，注意只调用push()/pop()/peek()方法，不要调用addFirst()/removeFirst()/peekFirst()方法，这样代码更加清晰。
+
+2. Stack在计算机中使用非常广泛，JVM在处理Java方法调用的时候就会通过栈这种数据结构维护方法调用的层次。
+    JVM会创建方法调用栈，每调用一个方法时，先将参数压栈，然后执行对应的方法；当方法返回时，返回值压栈，调用方法通过出栈操作获得方法返回值。
+    因为方法调用栈有容量限制，嵌套调用过多会造成栈溢出，即引发StackOverflowError：
+
+3. 用途：对整数进行进制的转换可利用栈；计算中缀表达式；
